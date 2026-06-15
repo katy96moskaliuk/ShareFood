@@ -6,3 +6,7 @@ env/
 # This file contains sensitive information such as API keys,
 # passwords, and secret tokens. Do not commit this file to Git.
 _secrets.py
+
+# Python cache
+__pycache__/
+*.pyc
