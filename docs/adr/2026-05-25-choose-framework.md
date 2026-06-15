@@ -1,41 +1,62 @@
-# Why Django Instead of Flask
+## Framework Selection for ShareFood MVP
 
-## Selected Framework
+**Date:** 2026-05-25
+**Status:** Accepted
+**Decision Maker:** Kateryna Moskaliuk
 
-Django
+## Objective
 
-## Why I Chose Django
+Select a Python web framework for the ShareFood MVP.
 
-I chose Django for the ShareFood MVP because I already know Python and Django provides many built-in features that speed up development.
+## Options Considered
 
-Django includes:
+### Option 1: Django
 
-* authentication system;
-* admin panel;
-* ORM for database interaction;
-* forms;
-* security features;
-* file upload support;
-* URL routing;
-* scalable project structure.
+#### Advantages
 
-This makes Django a good choice for building an MVP quickly.
+* Built-in authentication
+* Built-in admin panel
+* ORM included
+* Form handling and validation
+* Strong security features
+* Clear project structure
+* Rapid MVP development
 
-## Why Not Flask
+#### Disadvantages
 
-Flask is lightweight and flexible, but many features must be implemented manually.
+* More opinionated framework
+* Includes features that may not be needed initially
 
-For this project, Flask would require additional setup for:
+### Option 2: Flask
 
-* authentication;
-* admin panel;
-* database structure;
-* forms;
-* security;
-* project architecture.
+#### Advantages
 
-This would slow down development and increase project complexity.
+* Lightweight
+* Flexible architecture
+* Minimal initial setup
 
-## Conclusion
+#### Disadvantages
 
-Django is more suitable for the ShareFood MVP because it allows faster development, has built-in tools, and works well for CRUD-based web applications with users, listings, and messaging.
+* Authentication requires additional packages
+* No built-in admin panel
+* More manual configuration
+* Additional development time
+* Greater architectural responsibility
+
+## Evaluation
+
+The ShareFood MVP requires user accounts, food listings, image uploads, administration tools, and a database-driven architecture.
+
+Django provides most of these capabilities out of the box, reducing implementation effort and development time.
+
+## Decision
+
+**Django has been selected as the primary framework for the ShareFood MVP.**
+
+## Expected Impact
+
+* Faster MVP delivery
+* Lower implementation complexity
+* Easier maintenance
+* Strong foundation for future growth
+

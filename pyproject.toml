@@ -1,0 +1,14 @@
+[project]
+name = "ShareFood"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+dependencies = [
+    "django>=6.0,<7.0",
+    "requests>=2.32",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
