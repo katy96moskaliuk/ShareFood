@@ -21,6 +21,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
+pythonpath = ["src/ShareFood"]
 DJANGO_SETTINGS_MODULE = "settings"
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
-testpaths = ["src"]
+testpaths = ["tests"]
