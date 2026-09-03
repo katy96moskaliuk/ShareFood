@@ -5,6 +5,7 @@ requires-python = ">=3.12"
 
 dependencies = [
     "django>=6.0,<7.0",
+    "psycopg[binary]>=3.3.4",
     "requests>=2.32",
 ]
 
@@ -12,3 +13,14 @@ dependencies = [
 dev = [
     "pytest"
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-django>=4.14.0",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+testpaths = ["src"]
