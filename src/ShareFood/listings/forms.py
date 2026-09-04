@@ -12,6 +12,7 @@ class FoodListingForm(forms.ModelForm):
             "district",
             "category",
             "expiration_date",
+            "image",
         ]
         widgets = {
             "expiration_date": forms.DateInput(attrs={"type": "date"}),

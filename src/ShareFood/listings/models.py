@@ -8,7 +8,9 @@ class FoodListing(models.Model):
         ("grains", "Grains & Pasta"),
         ("canned", "Canned Food"),
         ("drinks", "Drinks"),
-        ("sweets", "Sweets"),
+        ("sweets", "Sweets",),
+        ("bakery", "Bread & Bakery"),
+        
     ]
 
     DISTRICT_CHOICES = [
@@ -26,6 +28,8 @@ class FoodListing(models.Model):
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
     expiration_date = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    image = models.ImageField(upload_to="listings/")
 
     def __str__(self):
         return self.title
