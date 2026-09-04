@@ -3,36 +3,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ShareFood - Active Listings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareFood</title>
     <link rel="stylesheet" href="{% static 'listings/style.css' %}">
 </head>
 <body>
-    <h1>ShareFood</h1>
 
+    <h1>Share Food</h1>
+
+    <!-- Форма добавления еды -->
     <div class="form-card">
-        <h2>Create New Listing</h2>
+        <h2>Add Available Food</h2>
         <form method="post">
             {% csrf_token %}
-            {% for field in form %}
-                <div class="form-group">
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {{ field }}
-                </div>
-            {% endfor %}
-            <button type="submit">Publish Food Item</button>
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit">Add Listing</button>
         </form>
     </div>
 
+    <!-- Список карточек -->
     <h2>Available Food</h2>
-    {% for item in listings %}
-        <div class="listing-card">
-            <h3>{{ item.title }} <span class="badge">{{ item.get_category_display }}</span></h3>
-            <p><strong>Quantity:</strong> {{ item.quantity }} | <strong>District:</strong> {{ item.get_district_display }}</p>
-            <p>{{ item.description }}</p>
-            <p><small>Expires on: {{ item.expiration_date }}</small></p>
-        </div>
-    {% empty %}
-        <p>No listings available yet.</p>
-    {% endfor %}
+    <div class="listings-grid">
+        {% for item in listings %}
+            <div class="listing-card">
+                <div>
+                    <div class="listing-header">
+                        <h3 class="listing-title">{{ item.title }}</h3>
+                        <span class="badge">{{ item.get_category_display }}</span>
+                    </div>
+                    <div class="listing-details">
+                        📍 {{ item.get_district_display }} • 📦 {{ item.quantity }}
+                    </div>
+                    <p class="listing-description">{{ item.description }}</p>
+                </div>
+                <div class="listing-footer">
+                    ⏳ Expires: {{ item.expiration_date }}
+                </div>
+            </div>
+        {% empty %}
+            <p>No listings available yet.</p>
+        {% endfor %}
+    </div>
+
 </body>
 </html>
