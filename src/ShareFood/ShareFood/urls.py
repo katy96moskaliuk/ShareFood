@@ -22,7 +22,7 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("core.urls")),
-    path("listings/", include("listings.urls")),
+    path("listings/", include("listings.urls", namespace='listings')),
 ]
 
 if settings.DEBUG:
