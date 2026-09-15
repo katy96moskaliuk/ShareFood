@@ -18,6 +18,20 @@
             padding: 2rem 1rem;
             text-align: center;
         }
+        nav {
+            margin-top: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 15px;
+            background-color: #1b5e20;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #388e3c;
+        }
         main {
             max-width: 800px;
             margin: 2rem auto;
@@ -44,6 +58,10 @@
     <header>
         <h1>Welcome to ShareFood</h1>
         <p>Sharing food, reducing waste, and building community.</p>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'listings:list' %}">View Listings</a>
+        </nav>
     </header>
     <main>
         <div class="card">
