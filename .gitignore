@@ -19,3 +19,5 @@ __pycache__/
 
 # Aider logs & history
 .aider*
+
+media/
