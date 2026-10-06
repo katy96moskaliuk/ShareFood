@@ -14,6 +14,16 @@
         <nav>
             {% comment %} <a href="{% url 'home' %}">Home</a> {% endcomment %}
             <a href="{% url 'listings:list' %}">View Listings</a>
+            {% if user.is_authenticated %}
+                <span>Hello, {{ user.username }}!</span>
+                <form action="{% url 'logout' %}" method="post" style="display:inline">
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Log in</a>
+                <a href="{% url 'register' %}">Sign up</a>
+            {% endif %}
         </nav>
     </header>
     <main>
