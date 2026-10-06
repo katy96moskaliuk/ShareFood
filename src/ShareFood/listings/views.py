@@ -12,7 +12,7 @@ def listings_list(request):
     else:
         form = FoodListingForm()
 
-    listings = FoodListing.objects.all().order_by("-created_at")
+    listings = FoodListing.objects.all().order_by("-created_at")   # pylint: disable=no-member
     return render(
         request, "listings/index.html", {"listings": listings, "form": form}
     )
