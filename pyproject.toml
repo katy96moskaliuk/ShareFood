@@ -20,6 +20,7 @@ dev = [
 dev = [
     "pytest>=9.0.3",
     "pytest-django>=4.14.0",
+    "pylint"
 ]
 
 [tool.pytest.ini_options]

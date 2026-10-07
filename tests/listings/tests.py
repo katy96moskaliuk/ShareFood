@@ -21,6 +21,6 @@ def test_create_food_listing():
 
 @pytest.mark.django_db
 def test_listings_list_view(client):
-    url = reverse("listings_list")
+    url = reverse("listings:list")
     response = client.get(url)
     assert response.status_code == 200
