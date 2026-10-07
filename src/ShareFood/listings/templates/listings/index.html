@@ -11,17 +11,27 @@
 
     <h1>Share Food</h1>
 
-    
-    <div class="form-card">
-        <h2>Add Available Food</h2>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-group">
-                {{ form.as_p }}
-            </div>
-            <button type="submit" class="btn-submit">Add Listing</button>
-        </form>
-    </div>
+    {% if user.is_authenticated %}
+        <div class="form-card">
+            <h2>Add Available Food</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn-submit">Add Listing</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="form-card">
+            <p>
+                <a href="{% url 'login' %}?next={% url 'listings:list' %}">Log in</a>
+                or
+                <a href="{% url 'register' %}">sign up</a>
+                to add a listing.
+            </p>
+        </div>
+    {% endif %}
 
 
     <h2>Available Food</h2>
