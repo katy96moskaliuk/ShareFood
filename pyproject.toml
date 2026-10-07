@@ -20,7 +20,8 @@ dev = [
 dev = [
     "pytest>=9.0.3",
     "pytest-django>=4.14.0",
-    "pylint"
+    "pylint",
+    "pylint-django>=2.8.0",
 ]
 
 [tool.pytest.ini_options]
@@ -28,3 +29,17 @@ pythonpath = ["src/ShareFood"]
 DJANGO_SETTINGS_MODULE = "settings"
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
 testpaths = ["tests"]
+
+
+[tool.pylint.main]
+load-plugins = ["pylint_django"]
+django-settings-module = "settings"
+init-hook = "import sys; sys.path.append('src/ShareFood')"
+ignore = ["migrations"]
+
+[tool.pylint."messages control"]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+]
