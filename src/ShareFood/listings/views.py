@@ -3,6 +3,8 @@ from .forms import FoodListingForm
 from .models import FoodListing
 
 
+
+
 def listings_list(request):
     if request.method == "POST":
         form = FoodListingForm(request.POST, request.FILES)
