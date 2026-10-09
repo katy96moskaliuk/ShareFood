@@ -1,37 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShareFood - Home</title>
-    {% load static %}
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}ShareFood - Home{% endblock %}
+
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'core/style.css' %}">
-</head>
-<body>
-    <header>
-        <h1>Welcome to ShareFood</h1>
-        <p>Sharing food, reducing waste, and building community.</p>
-        <nav>
-            {% comment %} <a href="{% url 'home' %}">Home</a> {% endcomment %}
-            <a href="{% url 'listings:list' %}">View Listings</a>
-            {% if user.is_authenticated %}
-                <span>Hello, {{ user.username }}!</span>
-                <form action="{% url 'logout' %}" method="post" style="display:inline">
-                    {% csrf_token %}
-                    <button type="submit">Log out</button>
-                </form>
-            {% else %}
-                <a href="{% url 'login' %}">Log in</a>
-                <a href="{% url 'register' %}">Sign up</a>
-            {% endif %}
-        </nav>
-    </header>
-    <main>
-        <div class="card">
-            <h2>About Our Project</h2>
-            <p>ShareFood connects people who have extra food with those who need it. Explore our available listings to discover food sharing in your area.</p>
-            <a href="{% url 'listings:list' %}" class="btn">View Listings</a>
-        </div>
-    </main>
-</body>
-</html>
+{% endblock %}
+
+{% block header %}
+    <h1>Welcome to ShareFood</h1>
+    <p>Sharing food, reducing waste, and building community.</p>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h2>About Our Project</h2>
+        <p>ShareFood connects people who have extra food with those who need it. Explore our available listings to discover food sharing in your area.</p>
+        <a href="{% url 'listings:list' %}" class="btn">View Listings</a>
+    </div>
+{% endblock %}
