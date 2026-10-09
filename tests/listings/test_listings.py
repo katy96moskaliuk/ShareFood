@@ -24,3 +24,11 @@ def test_listings_list_view(client):
     url = reverse("listings:list")
     response = client.get(url)
     assert response.status_code == 200
+
+  
+@pytest.mark.django_db
+def test_guest_cannot_create_listing(client):
+    response = client.post(reverse("listings:list"), {"title": "Apples"})
+    assert response.status_code == 302
+    assert response.url == reverse("login")
+    assert FoodListing.objects.count() == 0
