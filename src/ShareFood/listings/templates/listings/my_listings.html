@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}ShareFood - My listings{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'listings/style.css' %}">
+{% endblock %}
+
+{% block header %}
+    <h1>My listings</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="listings-grid">
+        {% for item in listings %}
+            <div class="listing-card">
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;">
+                {% endif %}
+                <div>
+                    <div class="listing-header">
+                        <h3 class="listing-title">{{ item.title }}</h3>
+                        <span class="badge">{{ item.get_category_display }}</span>
+                    </div>
+                    <div class="listing-details">
+                        📍 {{ item.get_district_display }} • 📦 {{ item.quantity }}
+                    </div>
+                    <p class="listing-description">{{ item.description }}</p>
+                </div>
+                <div class="listing-footer">
+                    ⏳ Expires: {{ item.expiration_date }}
+                </div>
+            </div>
+        {% empty %}
+            <p>You have no listings yet. <a href="{% url 'listings:list' %}">Add your first one.</a></p>
+        {% endfor %}
+    </div>
+{% endblock %}
