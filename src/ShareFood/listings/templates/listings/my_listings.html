@@ -28,8 +28,13 @@
                     </div>
                     <p class="listing-description">{{ item.description }}</p>
                 </div>
-                <div class="listing-footer">
+                               <div class="listing-footer">
                     ⏳ Expires: {{ item.expiration_date }}
+                    <form action="{% url 'listings:delete' item.pk %}" method="post"
+                          onsubmit="return confirm('Delete this listing?');">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
                 </div>
             </div>
         {% empty %}

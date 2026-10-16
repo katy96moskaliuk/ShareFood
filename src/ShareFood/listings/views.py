@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
+
 from .forms import FoodListingForm
 from .models import FoodListing
 
@@ -23,7 +25,16 @@ def listings_list(request):
         request, "listings/index.html", {"listings": listings, "form": form}
     )
 
+
 @login_required
 def my_listings(request):
     listings = FoodListing.objects.filter(owner=request.user).order_by("-created_at")
     return render(request, "listings/my_listings.html", {"listings": listings})
+
+
+@login_required
+@require_POST
+def listing_delete(request, pk):
+    listing = get_object_or_404(FoodListing, pk=pk, owner=request.user)
+    listing.delete()
+    return redirect("listings:my")
