@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
+from django.utils import timezone
 
 from .forms import FoodListingForm
 from .models import FoodListing
@@ -29,7 +30,11 @@ def listings_list(request):
 @login_required
 def my_listings(request):
     listings = FoodListing.objects.filter(owner=request.user).order_by("-created_at")
-    return render(request, "listings/my_listings.html", {"listings": listings})
+    today = timezone.localdate().isoformat()
+    return render(request, "listings/my_listings.html", {
+        "listings": listings,
+        "today": today,
+    })
 
 
 @login_required
