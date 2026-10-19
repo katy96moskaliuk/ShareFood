@@ -61,6 +61,7 @@ def test_my_listings_shows_only_own(client, django_user_model):
     assert "Annas apples" in content
     assert "Borises bread" not in content
 
+
 def make_listing(owner, title="Apples"):
     return FoodListing.objects.create(
         title=title,
@@ -112,3 +113,30 @@ def test_delete_requires_post(client, django_user_model):
     response = client.get(reverse("listings:delete", args=[listing.pk]))
     assert response.status_code == 405
     assert FoodListing.objects.count() == 1
+
+@pytest.mark.django_db
+def test_owner_can_open_edit_page(client, django_user_model):
+    anna = django_user_model.objects.create_user(username="anna", password="StrongPass12345")
+    listing = make_listing(anna)
+    client.force_login(anna)
+    response = client.get(reverse("listings:edit", args=[listing.pk]))
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+def test_user_cannot_open_foreign_edit_page(client, django_user_model):
+    anna = django_user_model.objects.create_user(username="anna", password="StrongPass12345")
+    boris = django_user_model.objects.create_user(username="boris", password="StrongPass12345")
+    listing = make_listing(anna)
+    client.force_login(boris)
+    response = client.get(reverse("listings:edit", args=[listing.pk]))
+    assert response.status_code == 404
+
+
+@pytest.mark.django_db
+def test_guest_cannot_open_edit_page(client, django_user_model):
+    anna = django_user_model.objects.create_user(username="anna", password="StrongPass12345")
+    listing = make_listing(anna)
+    response = client.get(reverse("listings:edit", args=[listing.pk]))
+    assert response.status_code == 302
+    assert response.url.startswith(reverse("login"))

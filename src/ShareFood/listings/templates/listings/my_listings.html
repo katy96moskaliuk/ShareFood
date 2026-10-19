@@ -38,6 +38,7 @@
                             <span>⏳ {{ item.expiration_date }}</span>
                         </div>
                         <p class="listing-description">{{ item.description }}</p>
+                        <a href="{% url 'listings:edit' item.pk %}" class="btn">Edit</a>
                         <form action="{% url 'listings:delete' item.pk %}" method="post" class="delete-form">
                             {% csrf_token %}
                             <button type="submit" class="btn-delete">Delete</button>

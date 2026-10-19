@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}ShareFood - Edit listing{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'listings/style.css' %}">
+{% endblock %}
+
+{% block header %}
+    <h1>Edit listing</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="form-card">
+        <h2>{{ listing.title }}</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn-submit">Save changes</button>
+            <a href="{% url 'listings:my' %}">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

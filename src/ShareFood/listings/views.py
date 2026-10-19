@@ -43,3 +43,18 @@ def listing_delete(request, pk):
     listing = get_object_or_404(FoodListing, pk=pk, owner=request.user)
     listing.delete()
     return redirect("listings:my")
+
+
+@login_required
+def listing_edit(request, pk):
+    listing = get_object_or_404(FoodListing, pk=pk, owner=request.user)
+    if request.method == "POST":
+        form = FoodListingForm(request.POST, request.FILES, instance=listing)
+        if form.is_valid():
+            form.save()
+            return redirect("listings:my")
+    else:
+        form = FoodListingForm(instance=listing)
+    return render(
+        request, "listings/listing_edit.html", {"form": form, "listing": listing}
+    )
