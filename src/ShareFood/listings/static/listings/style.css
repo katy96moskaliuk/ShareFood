@@ -78,21 +78,82 @@ h2 {
     box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
 }
 
-button {
+/* Base button (used for links and neutral actions like "Edit") */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.btn:hover {
+    background: var(--bg-color);
+    border-color: #cbd5e1;
+}
+
+/* Primary action (green) */
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+/* Form submit button (full width, as before) */
+.btn-submit {
     width: 100%;
-    background-color: var(--primary);
-    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
+    background: var(--primary);
+    color: #fff;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-button:hover {
-    background-color: var(--primary-hover);
+.btn-submit:hover {
+    background: var(--primary-hover);
+}
+
+/* Delete button (red outline, fills on hover) */
+.btn-delete {
+    padding: 9px 16px;
+    border: 1px solid #f5c2c0;
+    border-radius: 8px;
+    background: #fff;
+    color: #c62828;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-delete:hover {
+    background: #c62828;
+    color: #fff;
+}
+
+/* Keep the delete form inline so it sits next to the Edit button */
+.delete-form {
+    display: inline-block;
+    margin: 0;
 }
 
 /* Сетка для списка карточек */
