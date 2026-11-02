@@ -17,9 +17,7 @@
             <h2>Add Available Food</h2>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="form-group">
-                    {{ form.as_p }}
-                </div>
+                {% include "listings/_form_fields.html" %}
                 <button type="submit" class="btn-submit">Add Listing</button>
             </form>
         </div>

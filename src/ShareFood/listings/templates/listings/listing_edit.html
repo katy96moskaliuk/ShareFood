@@ -16,9 +16,7 @@
         <h2>{{ listing.title }}</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="form-group">
-                {{ form.as_p }}
-            </div>
+            {% include "listings/_form_fields.html" %}
             <button type="submit" class="btn-submit">Save changes</button>
             <a href="{% url 'listings:my' %}">Cancel</a>
         </form>
