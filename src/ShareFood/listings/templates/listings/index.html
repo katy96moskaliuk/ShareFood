@@ -13,14 +13,18 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <div class="form-card">
-            <h2>Add Available Food</h2>
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% include "listings/_form_fields.html" %}
-                <button type="submit" class="btn-submit">Add Listing</button>
-            </form>
-        </div>
+        {# Collapsed by default; opens on validation errors or via ?add=1 #}
+        <details class="add-toggle" id="add" {% if form.errors or request.GET.add %}open{% endif %}>
+            <summary>+ Add listing</summary>
+            <div class="form-card">
+                <h2>Add Available Food</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% include "listings/_form_fields.html" %}
+                    <button type="submit" class="btn-submit">Add Listing</button>
+                </form>
+            </div>
+        </details>
     {% else %}
         <div class="form-card">
             <p>
