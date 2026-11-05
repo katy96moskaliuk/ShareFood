@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.conf import settings
 
 
@@ -42,3 +43,8 @@ class FoodListing(models.Model):
 
     def __str__(self):
         return self.title
+    
+    @property
+    def is_expired(self):
+        """True if the best-before date is already in the past."""
+        return self.expiration_date < timezone.localdate()

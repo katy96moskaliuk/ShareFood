@@ -39,7 +39,7 @@
     <h2>Available Food</h2>
     <div class="listings-grid">
         {% for item in listings %}
-            <div class="listing-card">
+            <div class="listing-card {% if item.is_expired %}expired{% endif %}">
                 {% if item.image %}
                     <img src="{{ item.image.url }}" alt="{{ item.title }}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;">
                 {% endif %}

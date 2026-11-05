@@ -21,15 +21,15 @@
     {% if listings %}
         <div class="listings-grid">
             {% for item in listings %}
-                <div class="listing-card {% if item.expiration_date|date:'Y-m-d' < today %}expired{% endif %}">
+                <div class="listing-card {% if item.is_expired %}expired{% endif %}">
                     {% if item.image %}
                         <img src="{{ item.image.url }}" alt="{{ item.title }}" class="listing-image">
                     {% endif %}
                     <div class="listing-card-body">
                         <div class="listing-header">
                             <h3 class="listing-title">{{ item.title }}</h3>
-                            <span class="status-badge {% if item.expiration_date|date:'Y-m-d' < today %}expired{% else %}active{% endif %}">
-                                {% if item.expiration_date|date:'Y-m-d' < today %}Expired{% else %}Active{% endif %}
+                            <span class="status-badge {% if item.is_expired %}expired{% else %}active{% endif %}">
+                                {% if item.is_expired %}Expired{% else %}Active{% endif %}
                             </span>
                         </div>
                         <div class="meta">
