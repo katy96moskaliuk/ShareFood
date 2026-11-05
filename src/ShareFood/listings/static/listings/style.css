@@ -35,7 +35,7 @@ h2 {
     color: var(--text-color);
 }
 
-/* Карточка формы */
+/* Form card */
 .form-card {
     background: var(--card-bg);
     padding: 24px;
@@ -43,39 +43,6 @@ h2 {
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     margin-bottom: 40px;
-}
-
-.form-group {
-    margin-bottom: 16px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.form-group input, 
-.form-group select, 
-.form-group textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 0.95rem;
-    background-color: #fff;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    box-sizing: border-box;
-}
-
-.form-group input:focus, 
-.form-group select:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
 }
 
 /* Base button (used for links and neutral actions like "Edit") */
@@ -113,7 +80,7 @@ h2 {
     border-color: var(--primary-hover);
 }
 
-/* Form submit button (full width, as before) */
+/* Form submit button (full width) */
 .btn-submit {
     width: 100%;
     padding: 12px 20px;
@@ -156,7 +123,7 @@ h2 {
     margin: 0;
 }
 
-/* Сетка для списка карточек */
+/* Listings grid */
 .listings-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -164,13 +131,13 @@ h2 {
     margin-top: 16px;
 }
 
-/* Карточка объявления */
+/* Listing card */
 .listing-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -280,11 +247,6 @@ h2 {
     filter: grayscale(1);
 }
 
-/* Space between the Edit button and the Delete form */
-.listing-card-body .btn {
-    margin-right: 8px;
-}
-
 /* Two-column form grid */
 .form-grid {
     display: grid;
@@ -363,13 +325,6 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* Single column on small screens */
-@media (max-width: 640px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Collapsible "add listing" block */
 .add-toggle {
     margin-bottom: 28px;
@@ -445,5 +400,49 @@ h2 {
     border: 2px dashed var(--border-color);
     border-radius: 12px;
     color: var(--text-muted);
+}
+
+/* Row with the section title and the primary action */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+}
+
+.muted {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Edit / Delete buttons in one row, pinned to the bottom of the card */
+.listing-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.listing-actions .btn,
+.listing-actions .delete-form {
+    flex: 1;
+}
+
+.listing-actions .btn-delete {
+    width: 100%;
+}
+
+/* Single column on small screens */
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }
 

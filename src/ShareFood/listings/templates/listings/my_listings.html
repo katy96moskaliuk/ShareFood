@@ -9,12 +9,11 @@
 
 {% block header %}
     <h1>My listings</h1>
-    <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-primary">+ Add listing</a>
 {% endblock %}
 
 {% block content %}
     <div class="page-header">
-        <h1>My listings</h1>
+        <h2>Your listings <span class="muted">({{ listings|length }})</span></h2>
         <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-primary">+ Add listing</a>
     </div>
 
@@ -38,12 +37,14 @@
                             <span>⏳ {{ item.expiration_date }}</span>
                         </div>
                         <p class="listing-description">{{ item.description }}</p>
-                        <a href="{% url 'listings:edit' item.pk %}" class="btn">Edit</a>
-                        <form action="{% url 'listings:delete' item.pk %}" method="post" class="delete-form"
-                              onsubmit="return confirm('Delete &quot;{{ item.title|escapejs }}&quot;? This cannot be undone.');">
-                            {% csrf_token %}
-                            <button type="submit" class="btn-delete">Delete</button>
-                        </form>
+                        <div class="listing-actions">
+                            <a href="{% url 'listings:edit' item.pk %}" class="btn">Edit</a>
+                            <form action="{% url 'listings:delete' item.pk %}" method="post" class="delete-form"
+                                  onsubmit="return confirm('Delete &quot;{{ item.title|escapejs }}&quot;? This cannot be undone.');">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-delete">Delete</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
