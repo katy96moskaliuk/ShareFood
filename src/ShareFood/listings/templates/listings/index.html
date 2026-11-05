@@ -37,11 +37,42 @@
     {% endif %}
 
     <h2>Available Food</h2>
+
+    {# Filter bar: district, category, show expired #}
+    <form method="get" class="filters">
+        <div class="field">
+            <label for="f-district">District</label>
+            <select name="district" id="f-district">
+                <option value="">All districts</option>
+                {% for value, label in districts %}
+                    <option value="{{ value }}" {% if value == current_district %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="field">
+            <label for="f-category">Category</label>
+            <select name="category" id="f-category">
+                <option value="">All categories</option>
+                {% for value, label in categories %}
+                    <option value="{{ value }}" {% if value == current_category %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <label class="checkbox">
+            <input type="checkbox" name="show_expired" value="1" {% if show_expired %}checked{% endif %}>
+            Show expired
+        </label>
+        <div class="filters-actions">
+            <button type="submit" class="btn btn-primary">Apply</button>
+            {% if has_filters %}<a href="{% url 'listings:list' %}" class="btn">Reset</a>{% endif %}
+        </div>
+    </form>
+
     <div class="listings-grid">
         {% for item in listings %}
             <div class="listing-card {% if item.is_expired %}expired{% endif %}">
                 {% if item.image %}
-                    <img src="{{ item.image.url }}" alt="{{ item.title }}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 10px;">
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" class="listing-image" loading="lazy">
                 {% endif %}
                 <div>
                     <div class="listing-header">
@@ -58,7 +89,7 @@
                 </div>
             </div>
         {% empty %}
-            <p>No listings available yet.</p>
+            <p>{% if has_filters %}Nothing matches these filters.{% else %}No listings available yet.{% endif %}</p>
         {% endfor %}
     </div>
 {% endblock %}
