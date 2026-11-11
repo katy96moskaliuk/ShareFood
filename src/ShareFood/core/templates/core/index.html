@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="{% static 'core/style.css' %}">
 {% endblock %}
 
-{% block header %}
-    <h1>Welcome to ShareFood</h1>
-    <p>Sharing food, reducing waste, and building community.</p>
-{% endblock %}
-
 {% block content %}
-    <div class="card">
-        <h2>About Our Project</h2>
-        <p>ShareFood connects people who have extra food with those who need it. Explore our available listings to discover food sharing in your area.</p>
-        <a href="{% url 'listings:list' %}" class="btn">View Listings</a>
-    </div>
+    <section class="hero">
+        <h1 class="hero-title">Share food, reduce waste</h1>
+        <p class="hero-subtitle">
+            ShareFood connects people who have extra food with those who need it.
+            Sharing food, reducing waste, and building community.
+        </p>
+        <div class="hero-actions">
+            <a href="{% url 'listings:list' %}" class="btn btn-lg">View Listings</a>
+            <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-outline btn-lg">Share your food</a>
+        </div>
+    </section>
 {% endblock %}
