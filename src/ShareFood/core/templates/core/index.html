@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}ShareFood - Home{% endblock %}
+{% block title %}ShareFood - {% trans "Home" %}{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'core/style.css' %}">
@@ -9,35 +9,38 @@
 
 {% block content %}
     <section class="hero">
-        <h1 class="hero-title">Share food, reduce waste</h1>
+        <h1 class="hero-title">{% trans "Share food, reduce waste" %}</h1>
         <p class="hero-subtitle">
-            ShareFood connects people who have extra food with those who need it.
-            Sharing food, reducing waste, and building community.
+            {% blocktranslate trimmed %}
+                ShareFood connects people who have extra food with those who need it.
+                Sharing food, reducing waste, and building community.
+            {% endblocktranslate %}
         </p>
         <div class="hero-actions">
-            <a href="{% url 'listings:list' %}" class="btn btn-lg">View Listings</a>
-            <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-outline btn-lg">Share your food</a>
+            <a href="{% url 'listings:list' %}" class="btn btn-lg">{% trans "View Listings" %}</a>
+            <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-outline btn-lg">{% trans "Share your food" %}</a>
         </div>
     </section>
 
     <section class="how-it-works">
-        <h2 class="section-title">How it works</h2>
+        <h2 class="section-title">{% trans "How it works" %}</h2>
         <div class="steps">
             <div class="step-card">
                 <div class="step-icon">📝</div>
-                <h3>1. Post</h3>
-                <p>Have extra food? Add a listing with a photo, quantity and best-before date.</p>
+                <h3>1. {% trans "Post" %}</h3>
+                <p>{% trans "Have extra food? Add a listing with a photo, quantity and best-before date." %}</p>
             </div>
             <div class="step-card">
                 <div class="step-icon">🔍</div>
-                <h3>2. Find</h3>
-                <p>Browse available food and filter by district or category.</p>
+                <h3>2. {% trans "Find" %}</h3>
+                <p>{% trans "Browse available food and filter by district or category." %}</p>
             </div>
             <div class="step-card">
                 <div class="step-icon">🤝</div>
-                <h3>3. Pick up</h3>
-                <p>Collect what you need and make sure nothing goes to waste.</p>
+                <h3>3. {% trans "Pick up" %}</h3>
+                <p>{% trans "Collect what you need and make sure nothing goes to waste." %}</p>
             </div>
         </div>
     </section>
 {% endblock %}
+
