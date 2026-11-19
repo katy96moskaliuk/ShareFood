@@ -1,25 +1,26 @@
 {% extends "core/base.html" %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}ShareFood - My listings{% endblock %}
+{% block title %}ShareFood - {% trans "My listings" %}{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'listings/style.css' %}">
 {% endblock %}
 
 {% block header %}
-    <h1>My listings</h1>
+    <h1>{% trans "My listings" %}</h1>
 {% endblock %}
 
 {% block content %}
     <div class="page-header">
-        <h2>Your listings <span class="muted">({{ listings|length }})</span></h2>
-        <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-primary">+ Add listing</a>
+        <h2>{% trans "Your listings" %} <span class="muted">({{ listings|length }})</span></h2>
+        <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-primary">+ {% trans "Add listing" %}</a>
     </div>
 
     {% if listings %}
         <div class="listings-grid">
             {% for item in listings %}
+                {% blocktranslate asvar confirm_msg with title=item.title %}Delete “{{ title }}”? This cannot be undone.{% endblocktranslate %}
                 <div class="listing-card {% if item.is_expired %}expired{% endif %}">
                     {% if item.image %}
                         <img src="{{ item.image.url }}" alt="{{ item.title }}" class="listing-image">
@@ -28,7 +29,7 @@
                         <div class="listing-header">
                             <h3 class="listing-title">{{ item.title }}</h3>
                             <span class="status-badge {% if item.is_expired %}expired{% else %}active{% endif %}">
-                                {% if item.is_expired %}Expired{% else %}Active{% endif %}
+                                {% if item.is_expired %}{% trans "Expired" %}{% else %}{% trans "Active" %}{% endif %}
                             </span>
                         </div>
                         <div class="meta">
@@ -38,11 +39,11 @@
                         </div>
                         <p class="listing-description">{{ item.description }}</p>
                         <div class="listing-actions">
-                            <a href="{% url 'listings:edit' item.pk %}" class="btn">Edit</a>
+                            <a href="{% url 'listings:edit' item.pk %}" class="btn">{% trans "Edit" %}</a>
                             <form action="{% url 'listings:delete' item.pk %}" method="post" class="delete-form"
-                                  onsubmit="return confirm('Delete &quot;{{ item.title|escapejs }}&quot;? This cannot be undone.');">
+                                  onsubmit="return confirm('{{ confirm_msg|escapejs }}');">
                                 {% csrf_token %}
-                                <button type="submit" class="btn-delete">Delete</button>
+                                <button type="submit" class="btn-delete">{% trans "Delete" %}</button>
                             </form>
                         </div>
                     </div>
@@ -51,9 +52,8 @@
         </div>
     {% else %}
         <div class="empty-state">
-            <p>You have no listings yet.</p>
-            <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-primary">Create your first listing</a>
+            <p>{% trans "You have no listings yet." %}</p>
+            <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-primary">{% trans "Create your first listing" %}</a>
         </div>
     {% endif %}
 {% endblock %}
-
