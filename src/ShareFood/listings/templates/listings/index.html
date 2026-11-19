@@ -1,58 +1,63 @@
 {% extends "core/base.html" %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}ShareFood - Listings{% endblock %}
+{% block title %}ShareFood - {% trans "Listings" %}{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'listings/style.css' %}">
 {% endblock %}
 
 {% block header %}
-    <h1>Share Food</h1>
+    <h1>{% trans "Share Food" %}</h1>
 {% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
         {# Collapsed by default; opens on validation errors or via ?add=1 #}
         <details class="add-toggle" id="add" {% if form.errors or request.GET.add %}open{% endif %}>
-            <summary>+ Add listing</summary>
+            <summary>+ {% trans "Add listing" %}</summary>
             <div class="form-card">
-                <h2>Add Available Food</h2>
+                <h2>{% trans "Add Available Food" %}</h2>
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% include "listings/_form_fields.html" %}
-                    <button type="submit" class="btn-submit">Add Listing</button>
+                    <button type="submit" class="btn-submit">{% trans "Add Listing" %}</button>
                 </form>
             </div>
         </details>
     {% else %}
+        {% url 'login' as login_url %}
+        {% url 'register' as register_url %}
+        {% url 'listings:list' as next_url %}
         <div class="form-card">
             <p>
-                <a href="{% url 'login' %}?next={% url 'listings:list' %}">Log in</a>
-                or
-                <a href="{% url 'register' %}">sign up</a>
-                to add a listing.
+                {% blocktranslate trimmed %}
+                    <a href="{{ login_url }}?next={{ next_url }}">Log in</a>
+                    or
+                    <a href="{{ register_url }}">sign up</a>
+                    to add a listing.
+                {% endblocktranslate %}
             </p>
         </div>
     {% endif %}
 
-    <h2>Available Food</h2>
+    <h2>{% trans "Available Food" %}</h2>
 
     {# Filter bar: district, category, show expired #}
     <form method="get" class="filters">
         <div class="field">
-            <label for="f-district">District</label>
+            <label for="f-district">{% trans "District" %}</label>
             <select name="district" id="f-district">
-                <option value="">All districts</option>
+                <option value="">{% trans "All districts" %}</option>
                 {% for value, label in districts %}
                     <option value="{{ value }}" {% if value == current_district %}selected{% endif %}>{{ label }}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="field">
-            <label for="f-category">Category</label>
+            <label for="f-category">{% trans "Category" %}</label>
             <select name="category" id="f-category">
-                <option value="">All categories</option>
+                <option value="">{% trans "All categories" %}</option>
                 {% for value, label in categories %}
                     <option value="{{ value }}" {% if value == current_category %}selected{% endif %}>{{ label }}</option>
                 {% endfor %}
@@ -60,11 +65,11 @@
         </div>
         <label class="checkbox">
             <input type="checkbox" name="show_expired" value="1" {% if show_expired %}checked{% endif %}>
-            Show expired
+            {% trans "Show expired" %}
         </label>
         <div class="filters-actions">
-            <button type="submit" class="btn btn-primary">Apply</button>
-            {% if has_filters %}<a href="{% url 'listings:list' %}" class="btn">Reset</a>{% endif %}
+            <button type="submit" class="btn btn-primary">{% trans "Apply" %}</button>
+            {% if has_filters %}<a href="{% url 'listings:list' %}" class="btn">{% trans "Reset" %}</a>{% endif %}
         </div>
     </form>
 
@@ -85,11 +90,11 @@
                     <p class="listing-description">{{ item.description }}</p>
                 </div>
                 <div class="listing-footer">
-                    ⏳ Expires: {{ item.expiration_date }}
+                    ⏳ {% trans "Expires:" %} {{ item.expiration_date }}
                 </div>
             </div>
         {% empty %}
-            <p>{% if has_filters %}Nothing matches these filters.{% else %}No listings available yet.{% endif %}</p>
+            <p>{% if has_filters %}{% trans "Nothing matches these filters." %}{% else %}{% trans "No listings available yet." %}{% endif %}</p>
         {% endfor %}
     </div>
 {% endblock %}
