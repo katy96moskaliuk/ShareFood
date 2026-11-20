@@ -1,14 +1,14 @@
 {% extends "core/base.html" %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}ShareFood - Edit listing{% endblock %}
+{% block title %}ShareFood - {% trans "Edit listing" %}{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'listings/style.css' %}">
 {% endblock %}
 
 {% block header %}
-    <h1>Edit listing</h1>
+    <h1>{% trans "Edit listing" %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -17,8 +17,8 @@
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% include "listings/_form_fields.html" %}
-            <button type="submit" class="btn-submit">Save changes</button>
-            <a href="{% url 'listings:my' %}">Cancel</a>
+            <button type="submit" class="btn-submit">{% trans "Save changes" %}</button>
+            <a href="{% url 'listings:my' %}">{% trans "Cancel" %}</a>
         </form>
     </div>
 {% endblock %}
