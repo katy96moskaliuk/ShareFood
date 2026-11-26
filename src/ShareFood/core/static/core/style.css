@@ -401,6 +401,13 @@ ul.errorlist {
   gap: 0.75rem;
 }
 
+/* Small note under the hero buttons */
+.hero-hint {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
 /* ---------- How it works ---------- */
 .how-it-works {
   margin-bottom: 2rem;

@@ -19,9 +19,10 @@
             {% endblocktranslate %}
         </p>
         <div class="hero-actions">
-            <a href="{% url 'listings:list' %}" class="btn btn-lg">{% trans "View Listings" %}</a>
-            <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-outline btn-lg">{% trans "Share your food" %}</a>
+            <a href="{% url 'listings:list' %}" class="btn btn-lg">{% trans "Find food nearby" %}</a>
+            <a href="{% url 'listings:list' %}?add=1#add" class="btn btn-outline btn-lg">{% trans "Share food" %}</a>
         </div>
+        <p class="hero-hint">{% trans "You can browse listings without registering" %}</p>
     </section>
 
     <section class="how-it-works">
