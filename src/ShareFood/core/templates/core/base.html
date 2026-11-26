@@ -1,4 +1,4 @@
-{% load static i18n %}
+{% load static i18n i18n_extras %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
@@ -25,6 +25,26 @@
 
             <!-- Right side: user info & logout -->
             <div class="nav-user">
+                <!-- Language switcher: posts to Django's set_language view -->
+                {% get_current_language as CURRENT_LANGUAGE %}
+                {% get_available_languages as AVAILABLE_LANGUAGES %}
+                {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+                <div class="lang-switcher">
+                    {% for language in languages %}
+                        {# One small form per language: next = same page in that language #}
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{% translated_path language.code %}">
+                            <button type="submit" name="language" value="{{ language.code }}"
+                                    class="lang-btn{% if language.code == CURRENT_LANGUAGE %} active{% endif %}"
+                                    title="{{ language.name_local|capfirst }}"
+                                    {% if language.code == CURRENT_LANGUAGE %}aria-current="true"{% endif %}>
+                                {{ language.code|upper }}
+                            </button>
+                        </form>
+                    {% endfor %}
+                </div>
+
                 {% if user.is_authenticated %}
                     <span class="greeting">{% blocktranslate with username=user.username %}Hello, {{ username }}!{% endblocktranslate %}</span>
                     <form action="{% url 'logout' %}" method="post" class="logout-form">
