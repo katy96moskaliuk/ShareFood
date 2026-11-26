@@ -1,0 +1,62 @@
+/* ========================================
+   Language switcher (EN / RU / RO / UK)
+   Used in the navbar (base.html) and on the login / sign-up pages.
+   Selectors are scoped to .lang-switcher so page-wide form/button
+   styles (e.g. accounts/login.css) do not leak in.
+   ======================================== */
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.lang-switcher form {
+  display: block;
+  margin: 0;
+}
+
+.lang-switcher .lang-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  border: none;
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  cursor: pointer;
+  box-shadow: none;
+  transform: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-switcher .lang-btn:hover,
+.lang-switcher .lang-btn:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: none;
+  transform: none;
+  outline: none;
+}
+
+.lang-switcher .lang-btn.active {
+  background: #fff;
+  color: #2e7d32;
+  cursor: default;
+}
+
+/* Login / sign-up pages: switcher in the top-right corner of the green background */
+.auth-lang {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}

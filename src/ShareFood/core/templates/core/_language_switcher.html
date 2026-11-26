@@ -1,0 +1,20 @@
+{% load i18n i18n_extras %}
+{# Language switcher: one small form per language, posts to Django's set_language view. #}
+{# "next" is the current page with its language prefix swapped, e.g. /ru/listings/ -> /uk/listings/ #}
+{% get_current_language as CURRENT_LANGUAGE %}
+{% get_available_languages as AVAILABLE_LANGUAGES %}
+{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+<div class="lang-switcher">
+    {% for language in languages %}
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{% translated_path language.code %}">
+            <button type="submit" name="language" value="{{ language.code }}"
+                    class="lang-btn{% if language.code == CURRENT_LANGUAGE %} active{% endif %}"
+                    title="{{ language.name_local|capfirst }}"
+                    {% if language.code == CURRENT_LANGUAGE %}aria-current="true"{% endif %}>
+                {{ language.code|upper }}
+            </button>
+        </form>
+    {% endfor %}
+</div>

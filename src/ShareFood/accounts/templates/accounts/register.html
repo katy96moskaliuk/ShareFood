@@ -1,15 +1,18 @@
-{% load static %}
+{% load static i18n %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - ShareFood</title>
+    <title>{% trans "Sign up" %} - ShareFood</title>
     <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/lang_switcher.css' %}">
 </head>
 <body>
+    <div class="auth-lang">{% include "core/_language_switcher.html" %}</div>
+
     <div class="container">
-        <h1>Sign up</h1>
+        <h1>{% trans "Sign up" %}</h1>
         
         <form method="post">
             {% csrf_token %}
@@ -40,11 +43,11 @@
                 </div>
             {% endfor %}
             
-            <button type="submit">Create account</button>
+            <button type="submit">{% trans "Create account" %}</button>
         </form>
         
         <div class="login-link">
-            Already have an account? <a href="{% url 'login' %}">Log in</a>
+            {% trans "Already have an account?" %} <a href="{% url 'login' %}">{% trans "Log in" %}</a>
         </div>
     </div>
 </body>

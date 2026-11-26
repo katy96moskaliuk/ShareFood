@@ -122,48 +122,6 @@ body {
   border-color: var(--color-danger);
 }
 
-/* ---------- Language switcher ---------- */
-.lang-switcher {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  margin: 0;
-  padding: 3px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.15);
-}
-
-.lang-switcher form {
-  margin: 0;
-}
-
-.lang-btn {
-  background: transparent;
-  color: rgba(255, 255, 255, 0.85);
-  border: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
-  font: inherit;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.lang-btn:hover,
-.lang-btn:focus-visible {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.16);
-  outline: none;
-}
-
-.lang-btn.active {
-  background: #fff;
-  color: var(--color-primary);
-  cursor: default;
-}
-
 /* ---------- Layout ---------- */
 main {
   flex: 1;
