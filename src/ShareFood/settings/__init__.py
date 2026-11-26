@@ -121,10 +121,11 @@ LANGUAGES = [
     ('en', _('English')),
     ('ru', _('Russian')),
     ('ro', _('Romanian')),
+    ('uk', _('Ukrainian')),
 ]
 
 # Folder with translation files (next to manage.py)
-LOCALE_PATHS = [BASE_DIR.parent / 'locale']
+LOCALE_PATHS = [BASE_DIR / 'locale']
 
 TIME_ZONE = 'UTC'
 
