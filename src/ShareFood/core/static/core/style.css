@@ -456,6 +456,10 @@ ul.errorlist {
 
 /* Step that needs an account: darker green */
 .step-label--locked {
+  /* inline-flex puts the lock icon and the text on one line, centred */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   color: var(--color-primary-hover);
 }
 
@@ -485,7 +489,7 @@ ul.errorlist {
   margin-bottom: 1rem;
   border-radius: 50%;
   background: var(--color-primary-light);
-  font-size: 1.6rem;
+  color: var(--color-primary);   /* SVG icons use stroke="currentColor", so they take this green */
 }
 
 /* ---------- Footer ---------- */

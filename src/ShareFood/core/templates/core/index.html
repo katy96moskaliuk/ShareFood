@@ -31,24 +31,49 @@
         <div class="steps">
             {# Step 1: open to everyone #}
             <div class="step-card">
-                <div class="step-icon">🔍</div>
+                <div class="step-icon">
+                    {# Magnifying glass #}
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-3.5-3.5"></path>
+                    </svg>
+                </div>
                 <h3>1. {% trans "Find" %}</h3>
                 <p>{% trans "Fruit, bread, grains — with a photo and best-before date. Filter by district to see what's close by." %}</p>
                 <span class="step-label">{% trans "No registration needed" %}</span>
             </div>
             {# Step 2: create an account #}
             <div class="step-card">
-                <div class="step-icon">👤</div>
+                <div class="step-icon">
+                    {# Person #}
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 21a8 8 0 0 1 16 0"></path>
+                    </svg>
+                </div>
                 <h3>2. {% trans "Log in" %}</h3>
                 <p>{% trans "Create an account in a minute, so your neighbours know who they're arranging with." %}</p>
                 <span class="step-label">{% trans "Free" %}</span>
             </div>
             {# Step 3: only for logged-in users #}
             <div class="step-card">
-                <div class="step-icon">🤝</div>
+                <div class="step-icon">
+                    {# Shopping bag #}
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6 8h12l-1 12H7z"></path>
+                        <path d="M9 8a3 3 0 0 1 6 0"></path>
+                    </svg>
+                </div>
                 <h3>3. {% trans "Share or pick up" %}</h3>
                 <p>{% trans "Post what you can't finish or arrange to pick up someone else's. Nothing goes to waste." %}</p>
-                <span class="step-label step-label--locked">{% trans "Account required" %}</span>
+                <span class="step-label step-label--locked">
+                    {# Lock #}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="4" y="11" width="16" height="10" rx="2"></rect>
+                        <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+                    </svg>
+                    {% trans "Account required" %}
+                </span>
             </div>
         </div>
     </section>
