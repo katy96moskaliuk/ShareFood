@@ -17,7 +17,7 @@ def listings_list(request):
             listing = form.save(commit=False)
             listing.owner = request.user
             listing.save()
-            return redirect("/")
+            return redirect("home")
     else:
         form = FoodListingForm()
 

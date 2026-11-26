@@ -140,3 +140,50 @@ def test_guest_cannot_open_edit_page(client, django_user_model):
     response = client.get(reverse("listings:edit", args=[listing.pk]))
     assert response.status_code == 302
     assert response.url.startswith(reverse("login"))
+
+
+# ---------- Redirects keep the language prefix (/uk/, /ru/, ...) ----------
+
+# Smallest valid GIF (1x1 px) so the required image field passes validation
+TINY_GIF = (
+    b"GIF89a\x01\x00\x01\x00\x80\x00\x00\x00\x00\x00\xff\xff\xff!\xf9\x04"
+    b"\x01\x00\x00\x00\x00,\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02D\x01\x00;"
+)
+
+
+@pytest.mark.django_db
+def test_create_listing_redirect_keeps_language(client, django_user_model, settings, tmp_path):
+    from django.core.files.uploadedfile import SimpleUploadedFile
+
+    settings.MEDIA_ROOT = tmp_path
+    anna = django_user_model.objects.create_user(username="anna", password="StrongPass12345")
+    client.force_login(anna)
+    response = client.post("/uk/listings/", {
+        "title": "Apples",
+        "description": "d",
+        "quantity": "1 kg",
+        "district": "centru",
+        "category": "fruits",
+        "expiration_date": "2026-12-31",
+        "image": SimpleUploadedFile("apple.gif", TINY_GIF, content_type="image/gif"),
+    })
+    assert response.status_code == 302
+    assert response.url == "/uk/"
+    assert FoodListing.objects.count() == 1
+
+
+@pytest.mark.django_db
+def test_guest_post_redirects_to_login_in_same_language(client):
+    response = client.post("/ro/listings/", {"title": "Apples"})
+    assert response.status_code == 302
+    assert response.url == "/ro/accounts/login/"
+
+
+@pytest.mark.django_db
+def test_delete_redirect_keeps_language(client, django_user_model):
+    anna = django_user_model.objects.create_user(username="anna", password="StrongPass12345")
+    listing = make_listing(anna)
+    client.force_login(anna)
+    response = client.post(f"/ru/listings/{listing.pk}/delete/")
+    assert response.status_code == 302
+    assert response.url.startswith("/ru/")
