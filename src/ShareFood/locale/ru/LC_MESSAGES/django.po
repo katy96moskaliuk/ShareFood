@@ -1,0 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ShareFood\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-26 12:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: accounts/forms.py:8
+msgid "Email"
+msgstr "Электронная почта"
+
+#: core/templates/core/base.html:19 core/templates/core/index.html:4
+msgid "Home"
+msgstr "Главная"
+
+#: core/templates/core/base.html:20 core/templates/core/index.html:20
+msgid "View Listings"
+msgstr "Объявления"
+
+#: core/templates/core/base.html:22
+#: listings/templates/listings/my_listings.html:4
+#: listings/templates/listings/my_listings.html:11
+msgid "My listings"
+msgstr "Мои объявления"
+
+#: core/templates/core/base.html:29
+#, python-format
+msgid "Hello, %(username)s!"
+msgstr "Привет, %(username)s!"
+
+#: core/templates/core/base.html:32
+msgid "Log out"
+msgstr "Выйти"
+
+#: core/templates/core/base.html:35
+msgid "Log in"
+msgstr "Войти"
+
+#: core/templates/core/base.html:36
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: core/templates/core/index.html:12
+msgid "Share food, reduce waste"
+msgstr "Делитесь едой, сокращайте отходы"
+
+#: core/templates/core/index.html:14
+msgid ""
+"ShareFood connects people who have extra food with those who need it. "
+"Sharing food, reducing waste, and building community."
+msgstr "ShareFood соединяет людей, у которых есть лишняя еда, с теми, кому она нужна. Делимся едой, сокращаем отходы и объединяем сообщество."
+
+#: core/templates/core/index.html:21
+msgid "Share your food"
+msgstr "Поделиться едой"
+
+#: core/templates/core/index.html:26
+msgid "How it works"
+msgstr "Как это работает"
+
+#: core/templates/core/index.html:30
+msgid "Post"
+msgstr "Разместите"
+
+#: core/templates/core/index.html:31
+msgid ""
+"Have extra food? Add a listing with a photo, quantity and best-before date."
+msgstr "Есть лишняя еда? Добавьте объявление с фото, количеством и сроком годности."
+
+#: core/templates/core/index.html:35
+msgid "Find"
+msgstr "Найдите"
+
+#: core/templates/core/index.html:36
+msgid "Browse available food and filter by district or category."
+msgstr "Просматривайте доступную еду и фильтруйте по району или категории."
+
+#: core/templates/core/index.html:40
+msgid "Pick up"
+msgstr "Заберите"
+
+#: core/templates/core/index.html:41
+msgid "Collect what you need and make sure nothing goes to waste."
+msgstr "Заберите то, что вам нужно, и пусть ничего не пропадёт."
+
+#: listings/models.py:9
+msgid "Fruits"
+msgstr "Фрукты"
+
+#: listings/models.py:10
+msgid "Vegetables"
+msgstr "Овощи"
+
+#: listings/models.py:11
+msgid "Grains & Pasta"
+msgstr "Крупы и макароны"
+
+#: listings/models.py:12
+msgid "Canned Food"
+msgstr "Консервы"
+
+#: listings/models.py:13
+msgid "Drinks"
+msgstr "Напитки"
+
+#: listings/models.py:14
+msgid "Sweets"
+msgstr "Сладости"
+
+#: listings/models.py:15
+msgid "Bread & Bakery"
+msgstr "Хлеб и выпечка"
+
+#: listings/models.py:19
+msgid "Centru"
+msgstr "Центр"
+
+#: listings/models.py:20
+msgid "Botanica"
+msgstr "Ботаника"
+
+#: listings/models.py:21
+msgid "Buiucani"
+msgstr "Буюканы"
+
+#: listings/models.py:22
+msgid "Riscani"
+msgstr "Рышкановка"
+
+#: listings/models.py:23
+msgid "Ciocana"
+msgstr "Чеканы"
+
+#: listings/models.py:26
+msgid "title"
+msgstr "название"
+
+#: listings/models.py:27
+msgid "description"
+msgstr "описание"
+
+#: listings/models.py:28
+msgid "quantity"
+msgstr "количество"
+
+#: listings/models.py:29
+msgid "district"
+msgstr "район"
+
+#: listings/models.py:30
+msgid "category"
+msgstr "категория"
+
+#: listings/models.py:31
+msgid "best before"
+msgstr "годен до"
+
+#: listings/models.py:32
+msgid "created at"
+msgstr "создано"
+
+#: listings/models.py:34
+msgid "photo"
+msgstr "фото"
+
+#: listings/models.py:42
+msgid "owner"
+msgstr "владелец"
+
+#: listings/models.py:46
+msgid "food listing"
+msgstr "объявление"
+
+#: listings/models.py:47
+msgid "food listings"
+msgstr "объявления"
+
+#: listings/templates/listings/index.html:4
+msgid "Listings"
+msgstr "Объявления"
+
+#: listings/templates/listings/index.html:11
+msgid "Share Food"
+msgstr "Поделиться едой"
+
+#: listings/templates/listings/index.html:18
+#: listings/templates/listings/my_listings.html:17
+msgid "Add listing"
+msgstr "Добавить объявление"
+
+#: listings/templates/listings/index.html:20
+msgid "Add Available Food"
+msgstr "Добавить доступную еду"
+
+#: listings/templates/listings/index.html:24
+msgid "Add Listing"
+msgstr "Добавить объявление"
+
+#: listings/templates/listings/index.html:34
+#, python-format
+msgid ""
+"<a href=\"%(login_url)s?next=%(next_url)s\">Log in</a> or <a "
+"href=\"%(register_url)s\">sign up</a> to add a listing."
+msgstr "<a href=\"%(login_url)s?next=%(next_url)s\">Войдите</a> или <a href=\"%(register_url)s\">зарегистрируйтесь</a>, чтобы добавить объявление."
+
+#: listings/templates/listings/index.html:44
+msgid "Available Food"
+msgstr "Доступная еда"
+
+#: listings/templates/listings/index.html:49
+msgid "District"
+msgstr "Район"
+
+#: listings/templates/listings/index.html:51
+msgid "All districts"
+msgstr "Все районы"
+
+#: listings/templates/listings/index.html:58
+msgid "Category"
+msgstr "Категория"
+
+#: listings/templates/listings/index.html:60
+msgid "All categories"
+msgstr "Все категории"
+
+#: listings/templates/listings/index.html:68
+msgid "Show expired"
+msgstr "Показать просроченные"
+
+#: listings/templates/listings/index.html:71
+msgid "Apply"
+msgstr "Применить"
+
+#: listings/templates/listings/index.html:72
+msgid "Reset"
+msgstr "Сбросить"
+
+#: listings/templates/listings/index.html:93
+msgid "Expires:"
+msgstr "Годен до:"
+
+#: listings/templates/listings/index.html:97
+msgid "Nothing matches these filters."
+msgstr "По этим фильтрам ничего не найдено."
+
+#: listings/templates/listings/index.html:97
+msgid "No listings available yet."
+msgstr "Пока нет объявлений."
+
+#: listings/templates/listings/listing_edit.html:4
+#: listings/templates/listings/listing_edit.html:11
+msgid "Edit listing"
+msgstr "Редактировать объявление"
+
+#: listings/templates/listings/listing_edit.html:20
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: listings/templates/listings/listing_edit.html:21
+msgid "Cancel"
+msgstr "Отмена"
+
+#: listings/templates/listings/my_listings.html:16
+msgid "Your listings"
+msgstr "Ваши объявления"
+
+#: listings/templates/listings/my_listings.html:23
+#, python-format
+msgid "Delete “%(title)s”? This cannot be undone."
+msgstr "Удалить «%(title)s»? Это действие нельзя отменить."
+
+#: listings/templates/listings/my_listings.html:32
+msgid "Expired"
+msgstr "Просрочено"
+
+#: listings/templates/listings/my_listings.html:32
+msgid "Active"
+msgstr "Активно"
+
+#: listings/templates/listings/my_listings.html:42
+msgid "Edit"
+msgstr "Изменить"
+
+#: listings/templates/listings/my_listings.html:46
+msgid "Delete"
+msgstr "Удалить"
+
+#: listings/templates/listings/my_listings.html:55
+msgid "You have no listings yet."
+msgstr "У вас пока нет объявлений."
+
+#: listings/templates/listings/my_listings.html:56
+msgid "Create your first listing"
+msgstr "Создайте первое объявление"
+
+#: settings/__init__.py:121
+msgid "English"
+msgstr "Английский"
+
+#: settings/__init__.py:122
+msgid "Russian"
+msgstr "Русский"
+
+#: settings/__init__.py:123
+msgid "Romanian"
+msgstr "Румынский"
+
+#: settings/__init__.py:124
+msgid "Ukrainian"
+msgstr "Украинский"
