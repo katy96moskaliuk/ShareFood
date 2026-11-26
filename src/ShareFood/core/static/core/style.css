@@ -418,6 +418,13 @@ ul.errorlist {
   margin-bottom: 1.5rem;
 }
 
+/* Short line under "How it works" */
+.section-subtitle {
+  text-align: center;
+  margin: -1rem 0 1.5rem;   /* pull closer to the title, keep space before the cards */
+  color: var(--color-text);
+}
+
 .steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -425,6 +432,10 @@ ul.errorlist {
 }
 
 .step-card {
+  /* Column layout so the label can sit at the bottom of every card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -432,6 +443,20 @@ ul.errorlist {
   text-align: center;
   box-shadow: var(--shadow);
   transition: all 0.2s ease;
+}
+
+/* Who can do this step: "No registration needed" / "Free" / "Account required" */
+.step-label {
+  margin-top: auto;          /* push to the bottom of the card */
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Step that needs an account: darker green */
+.step-label--locked {
+  color: var(--color-primary-hover);
 }
 
 .step-card:hover {

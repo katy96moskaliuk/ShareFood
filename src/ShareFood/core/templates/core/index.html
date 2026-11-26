@@ -27,21 +27,28 @@
 
     <section class="how-it-works">
         <h2 class="section-title">{% trans "How it works" %}</h2>
+        <p class="section-subtitle">{% trans "Three steps — from your fridge to your neighbour" %}</p>
         <div class="steps">
-            <div class="step-card">
-                <div class="step-icon">📝</div>
-                <h3>1. {% trans "Post" %}</h3>
-                <p>{% trans "Have extra food? Add a listing with a photo, quantity and best-before date." %}</p>
-            </div>
+            {# Step 1: open to everyone #}
             <div class="step-card">
                 <div class="step-icon">🔍</div>
-                <h3>2. {% trans "Find" %}</h3>
-                <p>{% trans "Browse available food and filter by district or category." %}</p>
+                <h3>1. {% trans "Find" %}</h3>
+                <p>{% trans "Fruit, bread, grains — with a photo and best-before date. Filter by district to see what's close by." %}</p>
+                <span class="step-label">{% trans "No registration needed" %}</span>
             </div>
+            {# Step 2: create an account #}
+            <div class="step-card">
+                <div class="step-icon">👤</div>
+                <h3>2. {% trans "Log in" %}</h3>
+                <p>{% trans "Create an account in a minute, so your neighbours know who they're arranging with." %}</p>
+                <span class="step-label">{% trans "Free" %}</span>
+            </div>
+            {# Step 3: only for logged-in users #}
             <div class="step-card">
                 <div class="step-icon">🤝</div>
-                <h3>3. {% trans "Pick up" %}</h3>
-                <p>{% trans "Collect what you need and make sure nothing goes to waste." %}</p>
+                <h3>3. {% trans "Share or pick up" %}</h3>
+                <p>{% trans "Post what you can't finish or arrange to pick up someone else's. Nothing goes to waste." %}</p>
+                <span class="step-label step-label--locked">{% trans "Account required" %}</span>
             </div>
         </div>
     </section>
