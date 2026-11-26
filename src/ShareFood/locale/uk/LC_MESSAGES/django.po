@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ShareFood\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 13:00+0000\n"
+"POT-Creation-Date: 2026-11-26 13:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,7 +55,7 @@ msgstr "Немає акаунта?"
 msgid "Home"
 msgstr "Головна"
 
-#: core/templates/core/base.html:21 core/templates/core/index.html:20
+#: core/templates/core/base.html:21
 msgid "View Listings"
 msgstr "Оголошення"
 
@@ -75,51 +75,87 @@ msgid "Log out"
 msgstr "Вийти"
 
 #: core/templates/core/index.html:12
-msgid "Share food, reduce waste"
-msgstr "Діліться їжею, зменшуйте відходи"
+msgid "Free · nearby · less waste"
+msgstr "Безкоштовно · по сусідству · без зайвих відходів"
 
-#: core/templates/core/index.html:14
+#: core/templates/core/index.html:13
+msgid "Good food shouldn't end up in the trash"
+msgstr "Добра їжа не повинна опинитися на смітнику"
+
+#: core/templates/core/index.html:15
 msgid ""
-"ShareFood connects people who have extra food with those who need it. "
-"Sharing food, reducing waste, and building community."
+"Can't finish it? Share it with your neighbours. Looking for food? Find it "
+"close to home. ShareFood helps food reach the people who need it."
 msgstr ""
-"ShareFood поєднує людей, які мають зайву їжу, з тими, кому вона потрібна. "
-"Ділимося їжею, зменшуємо відходи та об'єднуємо громаду."
+"Не встигаєте доїсти — поділіться з сусідами. Шукаєте продукти — знайдіть їх "
+"поруч із домом. ShareFood допомагає їжі дійти до тих, кому вона потрібна."
 
-#: core/templates/core/index.html:21
-msgid "Share your food"
+#: core/templates/core/index.html:22
+msgid "Find food nearby"
+msgstr "Знайти їжу поруч"
+
+#: core/templates/core/index.html:23
+msgid "Share food"
 msgstr "Поділитися їжею"
 
-#: core/templates/core/index.html:26
+#: core/templates/core/index.html:25
+msgid "You can browse listings without registering"
+msgstr "Переглядати оголошення можна без реєстрації"
+
+#: core/templates/core/index.html:29
 msgid "How it works"
 msgstr "Як це працює"
 
 #: core/templates/core/index.html:30
-msgid "Post"
-msgstr "Розмістіть"
+msgid "Three steps — from your fridge to your neighbour"
+msgstr "Три кроки — від холодильника до сусіда"
 
-#: core/templates/core/index.html:31
-msgid ""
-"Have extra food? Add a listing with a photo, quantity and best-before date."
-msgstr ""
-"Маєте зайву їжу? Додайте оголошення з фото, кількістю та терміном "
-"придатності."
-
-#: core/templates/core/index.html:35
+#: core/templates/core/index.html:41
 msgid "Find"
 msgstr "Знайдіть"
 
-#: core/templates/core/index.html:36
-msgid "Browse available food and filter by district or category."
-msgstr "Переглядайте доступну їжу та фільтруйте за районом або категорією."
+#: core/templates/core/index.html:42
+msgid ""
+"Fruit, bread, grains — with a photo and best-before date. Filter by district "
+"to see what's close by."
+msgstr ""
+"Фрукти, хліб, крупи — з фото та терміном придатності. Фільтр за районом "
+"підкаже, що є зовсім поруч."
 
-#: core/templates/core/index.html:40
-msgid "Pick up"
-msgstr "Заберіть"
+#: core/templates/core/index.html:43
+msgid "No registration needed"
+msgstr "Без реєстрації"
 
-#: core/templates/core/index.html:41
-msgid "Collect what you need and make sure nothing goes to waste."
-msgstr "Заберіть те, що вам потрібно, і нехай нічого не пропаде."
+#: core/templates/core/index.html:54
+msgctxt "how it works step"
+msgid "Log in"
+msgstr "Увійдіть"
+
+#: core/templates/core/index.html:55
+msgid ""
+"Create an account in a minute, so your neighbours know who they're arranging "
+"with."
+msgstr "Створіть акаунт за хвилину — так сусіди знатимуть, з ким домовляються."
+
+#: core/templates/core/index.html:56
+msgid "Free"
+msgstr "Безкоштовно"
+
+#: core/templates/core/index.html:67
+msgid "Share or pick up"
+msgstr "Поділіться або заберіть"
+
+#: core/templates/core/index.html:68
+msgid ""
+"Post what you can't finish or arrange to pick up someone else's. Nothing "
+"goes to waste."
+msgstr ""
+"Викладіть те, що не встигаєте з'їсти, або домовтеся забрати чуже. Нічого не "
+"пропаде."
+
+#: core/templates/core/index.html:75
+msgid "Account required"
+msgstr "Лише з акаунтом"
 
 #: listings/models.py:9
 msgid "Fruits"

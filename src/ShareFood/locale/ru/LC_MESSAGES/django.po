@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ShareFood\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 13:00+0000\n"
+"POT-Creation-Date: 2026-11-26 13:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr "Нет аккаунта?"
 msgid "Home"
 msgstr "Главная"
 
-#: core/templates/core/base.html:21 core/templates/core/index.html:20
+#: core/templates/core/base.html:21
 msgid "View Listings"
 msgstr "Объявления"
 
@@ -74,50 +74,88 @@ msgid "Log out"
 msgstr "Выйти"
 
 #: core/templates/core/index.html:12
-msgid "Share food, reduce waste"
-msgstr "Делитесь едой, сокращайте отходы"
+msgid "Free · nearby · less waste"
+msgstr "Бесплатно · по соседству · без лишних отходов"
 
-#: core/templates/core/index.html:14
+#: core/templates/core/index.html:13
+msgid "Good food shouldn't end up in the trash"
+msgstr "Хорошая еда не должна оказаться в мусоре"
+
+#: core/templates/core/index.html:15
 msgid ""
-"ShareFood connects people who have extra food with those who need it. "
-"Sharing food, reducing waste, and building community."
+"Can't finish it? Share it with your neighbours. Looking for food? Find it "
+"close to home. ShareFood helps food reach the people who need it."
 msgstr ""
-"ShareFood соединяет людей, у которых есть лишняя еда, с теми, кому она "
-"нужна. Делимся едой, сокращаем отходы и объединяем сообщество."
+"Не успеваете доесть — поделитесь с соседями. Ищете продукты — найдите их "
+"рядом с домом. ShareFood помогает еде дойти до тех, кому она нужна."
 
-#: core/templates/core/index.html:21
-msgid "Share your food"
+#: core/templates/core/index.html:22
+msgid "Find food nearby"
+msgstr "Найти еду рядом"
+
+#: core/templates/core/index.html:23
+msgid "Share food"
 msgstr "Поделиться едой"
 
-#: core/templates/core/index.html:26
+#: core/templates/core/index.html:25
+msgid "You can browse listings without registering"
+msgstr "Смотреть объявления можно без регистрации"
+
+#: core/templates/core/index.html:29
 msgid "How it works"
 msgstr "Как это работает"
 
 #: core/templates/core/index.html:30
-msgid "Post"
-msgstr "Разместите"
+msgid "Three steps — from your fridge to your neighbour"
+msgstr "Три шага — от холодильника до соседа"
 
-#: core/templates/core/index.html:31
-msgid ""
-"Have extra food? Add a listing with a photo, quantity and best-before date."
-msgstr ""
-"Есть лишняя еда? Добавьте объявление с фото, количеством и сроком годности."
-
-#: core/templates/core/index.html:35
+#: core/templates/core/index.html:41
 msgid "Find"
 msgstr "Найдите"
 
-#: core/templates/core/index.html:36
-msgid "Browse available food and filter by district or category."
-msgstr "Просматривайте доступную еду и фильтруйте по району или категории."
+#: core/templates/core/index.html:42
+msgid ""
+"Fruit, bread, grains — with a photo and best-before date. Filter by district "
+"to see what's close by."
+msgstr ""
+"Фрукты, хлеб, крупы — с фото и сроком годности. Фильтр по району подскажет, "
+"что есть совсем рядом."
 
-#: core/templates/core/index.html:40
-msgid "Pick up"
-msgstr "Заберите"
+#: core/templates/core/index.html:43
+msgid "No registration needed"
+msgstr "Без регистрации"
 
-#: core/templates/core/index.html:41
-msgid "Collect what you need and make sure nothing goes to waste."
-msgstr "Заберите то, что вам нужно, и пусть ничего не пропадёт."
+#: core/templates/core/index.html:54
+msgctxt "how it works step"
+msgid "Log in"
+msgstr "Войдите"
+
+#: core/templates/core/index.html:55
+msgid ""
+"Create an account in a minute, so your neighbours know who they're arranging "
+"with."
+msgstr ""
+"Создайте аккаунт за минуту — так соседи будут знать, с кем договариваются."
+
+#: core/templates/core/index.html:56
+msgid "Free"
+msgstr "Бесплатно"
+
+#: core/templates/core/index.html:67
+msgid "Share or pick up"
+msgstr "Поделитесь или заберите"
+
+#: core/templates/core/index.html:68
+msgid ""
+"Post what you can't finish or arrange to pick up someone else's. Nothing "
+"goes to waste."
+msgstr ""
+"Выложите то, что не успеваете съесть, или договоритесь забрать чужое. Ничего "
+"не пропадёт."
+
+#: core/templates/core/index.html:75
+msgid "Account required"
+msgstr "Только с аккаунтом"
 
 #: listings/models.py:9
 msgid "Fruits"

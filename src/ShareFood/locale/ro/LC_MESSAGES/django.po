@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ShareFood\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 13:00+0000\n"
+"POT-Creation-Date: 2026-11-26 13:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr "Nu ai cont?"
 msgid "Home"
 msgstr "Acasă"
 
-#: core/templates/core/base.html:21 core/templates/core/index.html:20
+#: core/templates/core/base.html:21
 msgid "View Listings"
 msgstr "Vezi anunțurile"
 
@@ -73,52 +73,88 @@ msgid "Log out"
 msgstr "Ieșire"
 
 #: core/templates/core/index.html:12
-msgid "Share food, reduce waste"
-msgstr "Împarte mâncarea, reduce risipa"
+msgid "Free · nearby · less waste"
+msgstr "Gratuit · în apropiere · fără risipă"
 
-#: core/templates/core/index.html:14
+#: core/templates/core/index.html:13
+msgid "Good food shouldn't end up in the trash"
+msgstr "Mâncarea bună nu trebuie să ajungă la gunoi"
+
+#: core/templates/core/index.html:15
 msgid ""
-"ShareFood connects people who have extra food with those who need it. "
-"Sharing food, reducing waste, and building community."
+"Can't finish it? Share it with your neighbours. Looking for food? Find it "
+"close to home. ShareFood helps food reach the people who need it."
 msgstr ""
-"ShareFood îi conectează pe cei care au mâncare în plus cu cei care au nevoie "
-"de ea. Împărțim mâncarea, reducem risipa și construim comunitatea."
+"Nu reușești să o termini? Împarte-o cu vecinii. Cauți mâncare? Găsește-o "
+"aproape de casă. ShareFood ajută mâncarea să ajungă la cei care au nevoie de "
+"ea."
 
-#: core/templates/core/index.html:21
-msgid "Share your food"
-msgstr "Împarte mâncarea ta"
+#: core/templates/core/index.html:22
+msgid "Find food nearby"
+msgstr "Găsește mâncare în apropiere"
 
-#: core/templates/core/index.html:26
+#: core/templates/core/index.html:23
+msgid "Share food"
+msgstr "Împarte mâncarea"
+
+#: core/templates/core/index.html:25
+msgid "You can browse listings without registering"
+msgstr "Poți vedea anunțurile fără înregistrare"
+
+#: core/templates/core/index.html:29
 msgid "How it works"
 msgstr "Cum funcționează"
 
 #: core/templates/core/index.html:30
-msgid "Post"
-msgstr "Publică"
+msgid "Three steps — from your fridge to your neighbour"
+msgstr "Trei pași — de la frigiderul tău la vecin"
 
-#: core/templates/core/index.html:31
-msgid ""
-"Have extra food? Add a listing with a photo, quantity and best-before date."
-msgstr ""
-"Ai mâncare în plus? Adaugă un anunț cu fotografie, cantitate și data "
-"expirării."
-
-#: core/templates/core/index.html:35
+#: core/templates/core/index.html:41
 msgid "Find"
 msgstr "Găsește"
 
-#: core/templates/core/index.html:36
-msgid "Browse available food and filter by district or category."
+#: core/templates/core/index.html:42
+msgid ""
+"Fruit, bread, grains — with a photo and best-before date. Filter by district "
+"to see what's close by."
 msgstr ""
-"Răsfoiește mâncarea disponibilă și filtrează după sector sau categorie."
+"Fructe, pâine, cereale — cu fotografie și data expirării. Filtrează după "
+"sector ca să vezi ce e aproape."
 
-#: core/templates/core/index.html:40
-msgid "Pick up"
-msgstr "Ridică"
+#: core/templates/core/index.html:43
+msgid "No registration needed"
+msgstr "Fără înregistrare"
 
-#: core/templates/core/index.html:41
-msgid "Collect what you need and make sure nothing goes to waste."
-msgstr "Ia ce îți trebuie și ai grijă ca nimic să nu se risipească."
+#: core/templates/core/index.html:54
+msgctxt "how it works step"
+msgid "Log in"
+msgstr "Autentifică-te"
+
+#: core/templates/core/index.html:55
+msgid ""
+"Create an account in a minute, so your neighbours know who they're arranging "
+"with."
+msgstr "Creează un cont într-un minut, ca vecinii să știe cu cine se înțeleg."
+
+#: core/templates/core/index.html:56
+msgid "Free"
+msgstr "Gratuit"
+
+#: core/templates/core/index.html:67
+msgid "Share or pick up"
+msgstr "Oferă sau ridică"
+
+#: core/templates/core/index.html:68
+msgid ""
+"Post what you can't finish or arrange to pick up someone else's. Nothing "
+"goes to waste."
+msgstr ""
+"Publică ce nu reușești să mănânci sau înțelege-te să ridici mâncarea "
+"altcuiva. Nimic nu se risipește."
+
+#: core/templates/core/index.html:75
+msgid "Account required"
+msgstr "Necesită cont"
 
 #: listings/models.py:9
 msgid "Fruits"
